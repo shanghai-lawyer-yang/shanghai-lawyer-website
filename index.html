@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨淑倩律师 - 上海辉岩律师事务所 | 民商事诉讼专业律师</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d3748;
+            --accent-color: #3182ce;
+            --light-color: #f7fafc;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部导航 */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 150px 0 100px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #2c5282;
+        }
+        
+        /* 服务区域 */
+        .services {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--secondary-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background-color: var(--light-color);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 关于区域 */
+        .about {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            background-color: #e2e8f0;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        
+        /* 联系方式 */
+        .contact {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #cbd5e0;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #4a5568;
+            color: #a0aec0;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+        }
+        
+        /* 表单样式 */
+        .contact-form {
+            max-width: 600px;
+            margin: 50px auto 0;
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background-color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">杨淑倩<span>律师</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#services">服务领域</a></li>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#activities">活动动态</a></li>
+                    <li><a href="cases.html">成功案例</a></li>
+                    <li><a href="#contact">联系方式</a></li>
+                    <li><a href="#consultation">在线咨询</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>杨淑倩律师 - 专业民商事诉讼律师</h1>
+            <p>上海辉岩律师事务所执业律师，专注于合同纠纷、公司法律事务、金融借款纠纷等民商事诉讼案件，为客户提供专业、高效的法律服务。</p>
+            <a href="#consultation" class="cta-button">免费法律咨询</a>
+        </div>
+    </section>
+
+    <!-- 服务领域 -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>专业服务领域</h2>
+                <p>专注于各类民商事诉讼案件，为客户提供全方位的法律支持</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>合同纠纷</h3>
+                    <p>处理各类合同纠纷，包括买卖合同、租赁合同、借款合同等，维护当事人的合法权益。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>公司法律事务</h3>
+                    <p>公司设立、股权纠纷、公司解散、清算等公司法律事务的专业处理。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3>金融借款纠纷</h3>
+                    <p>处理银行借款、民间借贷、融资租赁等金融借款纠纷案件。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>其他民商事诉讼</h3>
+                    <p>侵权纠纷、知识产权纠纷、劳动争议等其他民商事诉讼案件。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>关于杨淑倩律师</h2>
+                    <p><strong>执业律所：</strong>上海辉岩律师事务所</p>
+                    <p>具有丰富的民商事诉讼经验，专注于为企业及个人客户提供专业的法律服务。在处理复杂法律问题时，注重细节，善于分析，能够为客户制定有效的诉讼策略。</p>
+                    <p>执业以来，成功代理了多起重大民商事案件，积累了丰富的实战经验。始终坚持以客户为中心，以专业为根本，以诚信为准则。</p>
+                    <p><strong>擅长领域：</strong>合同纠纷、公司法律事务、金融借款纠纷、融资租赁纠纷等民商事诉讼案件。</p>
+                    <p><strong>执业理念：</strong>专业、诚信、高效，全力维护当事人的合法权益。</p>
+                </div>
+                <div class="about-image">
+                    <div style="text-align: center;">
+                        <img src="素材/杨律师照片.JPG" alt="杨淑倩律师专业形象照" style="width: 100%; max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <p style="margin-top: 15px; font-weight: bold; color: var(--primary-color);">杨淑倩律师</p>
+                        <p style="color: #666; font-size: 0.9rem;">上海辉岩律师事务所执业律师</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例预览 -->
+    <section class="cases" id="cases" style="padding: 100px 0; background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>成功案例</h2>
+                <p>以下是我代理的部分代表性民商事诉讼案件</p>
+            </div>
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-image" style="background-color: #e3f2fd; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-file-contract" style="font-size: 3rem; color: #1a365d;"></i>
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">买卖合同纠纷</span>
+                        <h3>买卖合同纠纷案</h3>
+                        <p>代理原告成功追回拖欠货款，支持全部诉讼请求。</p>
+                        <p><strong>结果：</strong>胜诉</p>
+                        <a href="cases.html#case1" class="btn btn-outline" style="margin-top: 15px;">查看详情</a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image" style="background-color: #f3e5f5; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-home" style="font-size: 3rem; color: #1a365d;"></i>
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">房屋买卖合同纠纷</span>
+                        <h3>房屋买卖合同纠纷案</h3>
+                        <p>处理复杂房屋买卖纠纷，包含本诉和反诉，维护客户核心利益。</p>
+                        <p><strong>结果：</strong>部分胜诉</p>
+                        <a href="cases.html#case2" class="btn btn-outline" style="margin-top: 15px;">查看详情</a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image" style="background-color: #fff3e0; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-handshake" style="font-size: 3rem; color: #1a365d;"></i>
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">不正当竞争纠纷</span>
+                        <h3>司法确认调解协议案</h3>
+                        <p>商标侵权纠纷通过调解+司法确认程序高效解决，实现快速维权。</p>
+                        <p><strong>结果：</strong>调解协议获司法确认，赋予强制执行力</p>
+                        <a href="cases.html#case3" class="btn btn-outline" style="margin-top: 15px;">查看详情</a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image" style="background-color: #e8f5e8; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-balance-scale" style="font-size: 3rem; color: #1a365d;"></i>
+                    </div>
+                    <div class="case-content">
+                        <span class="case-tag">民商事诉讼</span>
+                        <h3>专业民商事诉讼服务</h3>
+                        <p>专注于各类民商事纠纷，为客户提供专业的法律服务和解决方案。</p>
+                        <p><strong>服务范围：</strong>合同纠纷、公司事务、金融借款等</p>
+                        <a href="cases.html" class="btn btn-outline" style="margin-top: 15px;">查看更多案例</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="cases.html" class="btn btn-primary">查看所有成功案例</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 活动与动态 -->
+    <section class="activities" id="activities" style="padding: 100px 0; background-color: #f0f9ff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>活动与动态</h2>
+                <p>最新专业分享与行业动态</p>
+            </div>
+            <div class="activities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                
+                <!-- 活动1：专业文章 -->
+                <div class="activity-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="activity-image" style="height: 180px; background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-newspaper" style="font-size: 4rem; color: white;"></i>
+                    </div>
+                    <div class="activity-content" style="padding: 25px;">
+                        <div class="activity-tag" style="display: inline-block; background-color: #f0f4f8; color: #2d3748; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;">
+                            专业文章
+                        </div>
+                        <h3 style="margin-bottom: 15px; color: #1a365d;">公司法律风险防范指南</h3>
+                        <p style="color: #4a5568; margin-bottom: 20px; line-height: 1.6;">
+                            针对企业常见的法律风险，提供全面的防范策略和解决方案。
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <span style="color: #718096; font-size: 0.9rem;">
+                                <i class="far fa-clock"></i> 最新更新
+                            </span>
+                            <a href="#consultation" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">阅读全文</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 活动2：专业文章 -->
+                <div class="activity-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="activity-image" style="height: 180px; background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-newspaper" style="font-size: 4rem; color: white;"></i>
+                    </div>
+                    <div class="activity-content" style="padding: 25px;">
+                        <div class="activity-tag" style="display: inline-block; background-color: #f0f4f8; color: #2d3748; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;">
+                            专业文章
+                        </div>
+                        <h3 style="margin-bottom: 15px; color: #1a365d;">公司法律风险防范指南</h3>
+                        <p style="color: #4a5568; margin-bottom: 20px; line-height: 1.6;">
+                            针对企业常见的法律风险，提供全面的防范策略和解决方案。
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <span style="color: #718096; font-size: 0.9rem;">
+                                <i class="far fa-clock"></i> 最新更新
+                            </span>
+                            <a href="#consultation" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">阅读全文</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 活动3：行业动态 -->
+                <div class="activity-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="activity-image" style="height: 180px; background: linear-gradient(135deg, #2c5282 0%, #4299e1 100%); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-chart-line" style="font-size: 4rem; color: white;"></i>
+                    </div>
+                    <div class="activity-content" style="padding: 25px;">
+                        <div class="activity-tag" style="display: inline-block; background-color: #ebf8ff; color: #2c5282; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;">
+                            行业动态
+                        </div>
+                        <h3 style="margin-bottom: 15px; color: #1a365d;">2026年民商事诉讼趋势分析</h3>
+                        <p style="color: #4a5568; margin-bottom: 20px; line-height: 1.6;">
+                            分析当前民商事诉讼领域的最新趋势，为企业提供前瞻性法律建议。
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <span style="color: #718096; font-size: 0.9rem;">
+                                <i class="fas fa-bullhorn"></i> 热点关注
+                            </span>
+                            <a href="#consultation" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 交互效果说明 -->
+            <div style="margin-top: 50px; text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <h3 style="color: #1a365d; margin-bottom: 15px;">动态交互效果</h3>
+                <p style="color: #4a5568; max-width: 800px; margin: 0 auto 20px; line-height: 1.6;">
+                    本页面已添加动态交互效果：鼠标悬停在活动卡片上时，卡片会轻微上浮并显示阴影加深效果，增强用户体验。
+                </p>
+                <div style="display: inline-flex; align-items: center; gap: 10px; color: #3182ce; font-weight: 600;">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <span>尝试悬停在活动卡片上体验效果</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>联系方式</h2>
+                <p>欢迎随时联系，我将尽快回复您的咨询</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>联系电话</h3>
+                    <p>15921823657</p>
+                    <p>（工作时间接听）</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>电子邮箱</h3>
+                    <p>1154214499@qq.com</p>
+                    <p>（24小时内回复）</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>办公地址</h3>
+                    <p>上海市长宁区长宁路1027号</p>
+                    <p>兆丰广场2806室</p>
+                    <p>邮编：200050</p>
+                    <p style="color: #e53e3e; font-size: 0.9rem; margin-top: 5px;">
+                        <i class="fas fa-exclamation-circle"></i> 面谈咨询需提前一天预约
+                    </p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>工作时间</h3>
+                    <p>周一至周五：9:00-17:30</p>
+                    <p>周末：预约咨询</p>
+                    <p style="color: #e53e3e; font-size: 0.9rem; margin-top: 5px;">
+                        <i class="fas fa-gavel"></i> 因部分时间开庭，可能不在办公室
+                    </p>
+                    <p style="color: #3182ce; font-size: 0.9rem; margin-top: 5px;">
+                        <i class="fas fa-calendar-check"></i> 面谈咨询需提前一天预约
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 微信联系方式 -->
+            <div style="margin-top: 60px; text-align: center;">
+                <h3 style="color: var(--primary-color); margin-bottom: 30px;">📱 首选微信联系</h3>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div style="text-align: center; max-width: 200px;">
+                        <img src="素材/微信二维码.png" alt="杨律师个人微信二维码" style="width: 150px; height: 150px; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; background: white;">
+                        <h4 style="margin-top: 15px; color: var(--primary-color);">个人微信</h4>
+                        <p style="color: #666; font-size: 0.9rem;">扫码添加微信好友</p>
+                        <p style="color: #e53e3e; font-size: 0.85rem; margin-top: 5px;">
+                            <i class="fas fa-star"></i> <strong>首选联系方式</strong>
+                        </p>
+                    </div>
+                    <div style="text-align: center; max-width: 200px;">
+                        <img src="素材/公众号二维码.png" alt="杨律师微信公众号二维码" style="width: 150px; height: 150px; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; background: white;">
+                        <h4 style="margin-top: 15px; color: var(--primary-color);">微信公众号</h4>
+                        <p style="color: #666; font-size: 0.9rem;">关注获取法律资讯</p>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; padding: 20px; background-color: #f0f9ff; border-radius: 8px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <p style="color: var(--primary-color); margin-bottom: 10px;">
+                        <i class="fas fa-info-circle"></i> <strong>联系方式优先级说明：</strong>
+                    </p>
+                    <ol style="text-align: left; margin-left: 20px; color: #4a5568;">
+                        <li><strong>首选微信联系</strong> - 响应最快，沟通最便捷</li>
+                        <li><strong>电话联系</strong> - 工作时间可直接通话</li>
+                        <li><strong>邮箱联系</strong> - 24小时内回复</li>
+                        <li><strong>微信公众号</strong> - 获取法律资讯和更新</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 在线咨询 -->
+    <section class="consultation" id="consultation" style="padding: 100px 0; background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>在线法律咨询</h2>
+                <p>填写以下表单，我将尽快与您联系</p>
+            </div>
+            <div class="contact-form">
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="name">姓名 *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">联系电话 *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">电子邮箱</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="caseType">案件类型</label>
+                        <select id="caseType" name="caseType">
+                            <option value="">请选择案件类型</option>
+                            <option value="contract">合同纠纷</option>
+                            <option value="company">公司法律事务</option>
+                            <option value="finance">金融借款纠纷</option>
+                            <option value="other">其他民商事诉讼</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">咨询内容 *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">提交咨询</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>杨淑倩律师</h3>
+                    <p>上海辉岩律师事务所执业律师，专业民商事诉讼律师，专注于为客户提供优质的法律服务。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <a href="#home">首页</a>
+                    <a href="#services">服务领域</a>
+                    <a href="#about">关于我</a>
+                    <a href="#contact">联系方式</a>
+                    <a href="cases.html">成功案例</a>
+                </div>
+                <div class="footer-section">
+                    <h3>服务领域</h3>
+                    <a href="#services">合同纠纷</a>
+                    <a href="#services">公司法律事务</a>
+                    <a href="#services">金融借款纠纷</a>
+                    <a href="#services">其他民商事诉讼</a>
+                </div>
+                <div class="footer-section">
+                    <h3>联系信息</h3>
+                    <p>电话：15921823657</p>
+                    <p>邮箱：1154214499@qq.com</p>
+                    <p>地址：上海市长宁区长宁路1027号兆丰广场2806室</p>
+                    <p>邮编：200050</p>
+                    <p style="color: #e53e3e; font-size: 0.85rem; margin-top: 5px;">
+                        <i class="fas fa-exclamation-circle"></i> 面谈咨询需提前一天预约
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&

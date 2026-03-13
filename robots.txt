@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://shanghailawyer.cn/sitemap.xml
+
+# 杨律师网站 robots.txt
+# 生成时间：2026-03-12
+# 网站：杨淑倩律师专业网站
+# 域名：shanghailawyer.cn
