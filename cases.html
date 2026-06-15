@@ -491,10 +491,10 @@
     </style>
     <style>
         /* Content visible by default even before JS loads */
-        .scroll-reveal { opacity: 1; transform: none; transition: none; }
+        
         /* After JS loads, it will add .animate class to trigger animation */
-        .scroll-reveal.animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .scroll-reveal.animate.revealed { opacity: 1; transform: translateY(0); }
+        
+        
     </style>
 </head>
 <body>
@@ -887,6 +887,8 @@
         });
     })();
     </script>
+
+<script>(function(){var h=document.getElementById('header');if(h){window.addEventListener('scroll',function(){h.classList.toggle('scrolled',window.scrollY>50)},{passive:true})}var m=document.getElementById('menuToggle'),n=document.getElementById('navLinks');if(m&&n){m.addEventListener('click',function(){n.classList.toggle('active')})}var b=document.createElement('button');b.className='back-to-top';b.innerHTML='&#x2191;';b.setAttribute('aria-label','\u8fd4\u56de\u9876\u90e8');document.body.appendChild(b);window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>300)},{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});})();</script>
 
 </body>
 </html>
