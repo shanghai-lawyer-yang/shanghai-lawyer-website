@@ -709,7 +709,7 @@
                 <p>如果您有类似的法律问题需要咨询或代理，欢迎联系我</p>
             </div>
             <div class="contact-form reveal">
-                <form id="caseConsultationForm">
+                <form id="caseConsultationForm" action="https://formspree.io/f/xgvapqkr" method="POST"
                     <div class="form-group">
                         <label for="name">姓名 <span style="color: #e53e3e;">*</span></label>
                         <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
@@ -733,6 +733,7 @@
                         <label for="description">案件简要描述 <span style="color: #e53e3e;">*</span></label>
                         <textarea id="description" name="description" rows="4" required placeholder="请简要描述您的案件情况，包括争议焦点、涉及金额等"></textarea>
                     </div>
+                    <input type="hidden" name="_redirect" value="https://shanghailawyer.net.cn?success">
                     <button type="submit" class="submit-button" id="submitBtn">
                         <i class="fas fa-paper-plane"></i> 提交咨询
                     </button>
