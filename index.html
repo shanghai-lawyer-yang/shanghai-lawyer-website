@@ -843,8 +843,11 @@
         .loaded body { opacity: 1; }
     </style>
     <style>
-        /* Ensure content is visible even before animations fire */
-        .scroll-reveal { opacity: 1 !important; transform: none !important; }
+        /* Content visible by default even before JS loads */
+        .scroll-reveal { opacity: 1; transform: none; transition: none; }
+        /* After JS loads, it will add .animate class to trigger animation */
+        .scroll-reveal.animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .scroll-reveal.animate.revealed { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
