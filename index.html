@@ -1328,30 +1328,11 @@
         const formSuccess = document.getElementById('formSuccess');
 
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // 简单的表单验证
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (!name || !phone || !message) {
-                alert('请填写姓名、联系电话和咨询内容（必填项）');
-                return;
-            }
-
-            // 模拟提交
-            const btn = form.querySelector('.submit-button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
-            btn.disabled = true;
-
-            setTimeout(function() {
-                form.style.display = 'none';
-                formSuccess.style.display = 'block';
-                btn.disabled = false;
-            }, 1200);
-        });
+    const btn = form.querySelector('.submit-button');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
+    btn.disabled = true;
+    // 提交到 FormSubmit，自动发送邮件到 1154214499@qq.com
+}););
 
         /* === 7. 加载进度条 === */
         const loadingBar = document.getElementById('loadingBar');
