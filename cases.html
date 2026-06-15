@@ -852,29 +852,11 @@
         // 表单处理
         const form = document.getElementById('caseConsultationForm');
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const caseType = document.getElementById('caseTypeSelect').value;
-            const description = document.getElementById('description').value.trim();
-
-            if (!name || !phone || !caseType || !description) {
-                alert('请填写所有必填字段');
-                return;
-            }
-
-            const btn = document.getElementById('submitBtn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
-            btn.disabled = true;
-
-            setTimeout(function() {
-                alert('案件咨询提交成功！我会尽快与您联系，分析您的案件情况。');
-                form.reset();
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 1500);
-        });
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
+    btn.disabled = true;
+    // 提交到 FormSubmit，自动发送邮件到 1154214499@qq.com
+}););
 
         // 平滑锚点
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
