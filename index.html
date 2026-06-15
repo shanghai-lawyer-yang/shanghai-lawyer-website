@@ -836,6 +836,16 @@
             transition: width 1s ease;
         }
     </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <style>
+        body { opacity: 1; }
+        .loaded body { opacity: 1; }
+    </style>
+    <style>
+        /* Ensure content is visible even before animations fire */
+        .scroll-reveal { opacity: 1 !important; transform: none !important; }
+    </style>
 </head>
 <body>
 
