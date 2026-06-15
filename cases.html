@@ -483,6 +483,16 @@
             .hero h1 { font-size: 1.7rem; }
         }
     </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <style>
+        body { opacity: 1; }
+        .loaded body { opacity: 1; }
+    </style>
+    <style>
+        /* Ensure content is visible even before animations fire */
+        .scroll-reveal { opacity: 1 !important; transform: none !important; }
+    </style>
 </head>
 <body>
 
