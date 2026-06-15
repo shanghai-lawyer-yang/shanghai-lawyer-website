@@ -731,9 +731,10 @@
                     <div class="form-group">
                         <label for="description">案件简要描述 <span style="color: #e53e3e;">*</span></label>
                         <textarea id="description" name="description" rows="4" required placeholder="请简要描述您的案件情况，包括争议焦点、涉及金额等"></textarea>
-                    </div>
-                    <input type="hidden" name="_redirect" value="https://shanghailawyer.net.cn?sent=1">
-                    <input type="hidden" name="_next" value="https://shanghailawyer.net.cn/cases.html?sent=1">
+                    </div>                    
+                    <input type="hidden" name="_next" value="https://shanghailawyer.net.cn/cases.html?sent=ok">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <button type="submit" class="submit-button" id="submitBtn">
                         <i class="fas fa-paper-plane"></i> 提交咨询
                     </button>
