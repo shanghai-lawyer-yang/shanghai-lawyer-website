@@ -4,557 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>成功案例 - 杨淑倩律师 | 上海辉岩律师事务所</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* ===== CSS变量 ===== */
-        :root {
-            --primary: #1a365d;
-            --primary-light: #2a4a7f;
-            --secondary: #2d3748;
-            --accent: #3182ce;
-            --accent-light: #63b3ed;
-            --light: #f7fafc;
-            --text: #2d3748;
-            --text-light: #718096;
-            --border: #e2e8f0;
-            --success: #48bb78;
-            --white: #ffffff;
-            --shadow: 0 4px 20px rgba(26,54,93,0.08);
-            --shadow-hover: 0 12px 40px rgba(26,54,93,0.15);
-            --radius: 12px;
-            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background: #f8f9fa;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ===== 导航栏 ===== */
-        header {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-        header.scrolled {
-            box-shadow: 0 4px 30px rgba(0,0,0,0.12);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-        .logo span { color: var(--accent); }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 28px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            position: relative;
-            padding: 4px 0;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover { color: var(--accent); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: var(--accent); }
-        .nav-links a.active::after { width: 100%; }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        /* ===== 英雄区 ===== */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 160px 0 80px;
-            margin-top: 72px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(49,130,206,0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(49,130,206,0.1) 0%, transparent 50%);
-            animation: heroShift 12s ease-in-out infinite alternate;
-        }
-        @keyframes heroShift {
-            0% { transform: translate(0,0) rotate(0deg); }
-            100% { transform: translate(2%,2%) rotate(3deg); }
-        }
-        .hero .container { position: relative; z-index: 1; }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s 0.2s forwards;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s 0.4s forwards;
-        }
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ===== 通用标题 ===== */
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .section-title h2 {
-            font-size: 2.3rem;
-            color: var(--primary);
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-        .section-title h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
-            margin: 12px auto 0;
-            border-radius: 2px;
-        }
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-        }
-
-        /* ===== 滚动动画 ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
-
-        /* ===== 案例展示 ===== */
-        .cases { padding: 80px 0; }
-
-        .cases-list {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .case-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            overflow: hidden;
-            transition: var(--transition);
-            border-left: 5px solid var(--accent);
-            cursor: default;
-        }
-        .case-card:hover {
-            box-shadow: var(--shadow-hover);
-            transform: translateX(6px);
-        }
-
-        .case-card .case-content { padding: 32px; }
-
-        .case-tag {
-            display: inline-block;
-            background: #e3f2fd;
-            color: #1565c0;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 14px;
-        }
-
-        .case-card h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .case-details {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-        }
-
-        .case-details h4 {
-            color: var(--primary);
-            margin: 18px 0 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        .case-details h4:first-child { margin-top: 0; }
-
-        .case-details ul {
-            margin: 10px 0 10px 20px;
-            color: var(--text);
-        }
-        .case-details li { margin-bottom: 6px; }
-        .case-details p { color: var(--text); }
-
-        .case-result {
-            background: #f0fff4;
-            border-left: 4px solid var(--success);
-            padding: 16px 20px;
-            margin: 16px 0;
-            border-radius: 6px;
-        }
-        .case-result p { color: #22543d; }
-        .case-result strong { color: #276749; }
-
-        blockquote {
-            border-left: 4px solid var(--accent);
-            padding-left: 20px;
-            margin: 20px 0;
-            font-style: italic;
-            color: var(--text);
-        }
-        blockquote footer {
-            margin-top: 10px;
-            font-style: normal;
-            color: var(--text-light);
-        }
-
-        /* ===== 咨询表单 ===== */
-        .consultation {
-            padding: 80px 0;
-            background: linear-gradient(180deg, #f8f9fa 0%, var(--white) 100%);
-        }
-        .contact-form {
-            max-width: 620px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 44px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        .form-group { margin-bottom: 22px; }
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--primary);
-            font-size: 0.95rem;
-        }
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 14px 16px;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            outline: none;
-            background: var(--light);
-        }
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(49,130,206,0.12);
-        }
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            background: linear-gradient(135deg, var(--accent), #2b6cb0);
-            color: white;
-            border: none;
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 100%;
-            letter-spacing: 1px;
-        }
-        .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(49,130,206,0.35);
-        }
-        .submit-button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-        .btn-outline {
-            border: 2px solid var(--accent);
-            color: var(--accent);
-        }
-        .btn-outline:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* ===== 页脚 ===== */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-section h3 {
-            font-size: 1.15rem;
-            margin-bottom: 18px;
-            color: white;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background: var(--accent);
-        }
-        .footer-section p, .footer-section a {
-            color: #cbd5e0;
-            margin-bottom: 8px;
-            display: block;
-            text-decoration: none;
-            font-size: 0.92rem;
-            transition: color 0.3s;
-        }
-        .footer-section a:hover { color: white; padding-left: 4px; }
-
-        .copyright {
-            text-align: center;
-            padding-top: 28px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #a0aec0;
-            font-size: 0.9rem;
-        }
-
-        /* ===== 返回顶部 ===== */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 48px;
-            height: 48px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(49,130,206,0.3);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-            z-index: 999;
-        }
-        .back-to-top.show {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-        .back-to-top:hover {
-            background: #2b6cb0;
-            transform: translateY(-4px);
-        }
-
-        /* ===== 响应式 ===== */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-
-            .menu-toggle { display: block; }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(255,255,255,0.98);
-                backdrop-filter: blur(12px);
-                padding: 20px 24px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                gap: 16px;
-            }
-            .nav-links.open { display: flex; }
-
-            .contact-form { padding: 28px 20px; }
-            .section-title h2 { font-size: 1.8rem; }
-        }
-
-        @media (max-width: 480px) {
-            .hero { padding: 140px 0 60px; }
-            .hero h1 { font-size: 1.7rem; }
-        }
-    </style>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <style>
-        body { opacity: 1; }
-        .loaded body { opacity: 1; }
-    </style>
-    <style>
-        /* Content visible by default even before JS loads */
-        
-        /* After JS loads, it will add .animate class to trigger animation */
-        
-        
-    </style>
 </head>
 <body>
-
-    <!-- ===== 导航栏 ===== -->
-    <header id="header">
+    <!-- 头部导航 -->
+    <header>
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="logo">杨淑倩<span>律师</span></a>
-                <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+                <button class="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
-                <ul class="nav-links" id="navLinks">
+                <ul class="nav-links">
                     <li><a href="index.html#home">首页</a></li>
                     <li><a href="index.html#services">服务领域</a></li>
                     <li><a href="index.html#about">关于我</a></li>
-                    <li><a href="index.html#activities">活动动态</a></li>
-                    <li><a href="cases.html" class="active">成功案例</a></li>
                     <li><a href="index.html#contact">联系方式</a></li>
                     <li><a href="index.html#consultation">在线咨询</a></li>
+                    <li><a href="cases.html" class="active">成功案例</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- ===== 英雄区 ===== -->
-    <section class="hero" id="home">
+    <!-- 案例页英雄区域 -->
+    <section class="hero" id="home" style="padding: 120px 0 80px; margin-top: 80px;">
         <div class="container">
             <h1>成功案例展示</h1>
-            <p>以下是我代理的部分代表性民商事诉讼案件，所有案件信息均隐去当事人隐私信息，仅展示案件类型、争议焦点和代理结果。</p>
+            <p>以下是我代理的部分代表性民商事诉讼案件，所有案件信息均已隐去当事人隐私信息，仅展示案件类型、争议焦点和代理结果。</p>
         </div>
     </section>
 
-    <!-- ===== 案例展示区 ===== -->
+    <!-- 案例展示区域 -->
     <section class="cases" id="cases">
         <div class="container">
-            <div class="section-title reveal">
-                <h2>代理成功案例</h2>
+            <div class="section-title">
+                <h2>代表性成功案例</h2>
                 <p>专注于民商事诉讼，为客户争取合法权益</p>
             </div>
 
+            <!-- 案例展示 - 长条分隔样式 -->
             <div class="cases-list">
-                <!-- 案例1：买卖合同纠纷 -->
-                <div class="case-card reveal reveal-delay-1" id="case1">
+                <!-- 案例1 -->
+                <div class="case-card fade-in">
                     <div class="case-content">
-                        <span class="case-tag"><i class="fas fa-file-contract"></i> 买卖合同纠纷</span>
+                        <span class="case-tag">买卖合同纠纷</span>
                         <h3>买卖合同纠纷案</h3>
                         <p><strong>案件类型：</strong>民事一审</p>
-
+                        
                         <div class="case-details">
                             <h4>案件背景：</h4>
                             <p>本案涉及一起买卖合同纠纷，原告与被告之间存在货物买卖关系。原告按约向被告交付货物后，被告未按约定支付货款，引发纠纷。</p>
-
+                            
                             <h4>争议焦点：</h4>
                             <ul>
                                 <li>买卖合同是否合法有效</li>
                                 <li>被告是否应支付拖欠货款</li>
                                 <li>利息计算标准是否合理</li>
                             </ul>
-
+                            
                             <h4>代理策略：</h4>
                             <p>作为代理律师，我重点收集并整理了以下证据材料：</p>
                             <ul>
@@ -563,29 +72,29 @@
                                 <li>催款通知和沟通记录</li>
                                 <li>相关法律法规依据</li>
                             </ul>
-
+                            
                             <h4>案件结果：</h4>
                             <div class="case-result">
-                                <p><strong><i class="fas fa-trophy"></i> 胜诉</strong> - 支持了原告的全部诉讼请求，判决被告支付拖欠货款及相应利息。</p>
+                                <p><strong>胜诉</strong> - 支持了原告的全部诉讼请求，判决被告支付拖欠货款及相应利息。</p>
                             </div>
-
+                            
                             <h4>案件意义：</h4>
                             <p>本案明确了在买卖合同纠纷中，只要合同合法有效，一方按约履行义务后，另一方应承担相应的付款责任。为类似案件的处理提供了参考。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 案例2：房屋买卖合同纠纷 -->
-                <div class="case-card reveal reveal-delay-2" id="case2">
+                <!-- 案例2 -->
+                <div class="case-card fade-in">
                     <div class="case-content">
-                        <span class="case-tag"><i class="fas fa-home"></i> 房屋买卖合同纠纷</span>
+                        <span class="case-tag">房屋买卖合同纠纷</span>
                         <h3>房屋买卖合同纠纷案</h3>
                         <p><strong>案件类型：</strong>民事一审（含反诉）</p>
-
+                        
                         <div class="case-details">
                             <h4>案件背景：</h4>
                             <p>本案涉及一起复杂的房屋买卖合同纠纷，包含本诉和反诉。双方签订了房屋买卖合同及补充协议，但在履行过程中产生争议。</p>
-
+                            
                             <h4>争议焦点：</h4>
                             <ul>
                                 <li>房屋买卖合同及补充协议的效力</li>
@@ -593,7 +102,7 @@
                                 <li>违约责任认定和损失计算</li>
                                 <li>反诉请求的合理性</li>
                             </ul>
-
+                            
                             <h4>代理策略：</h4>
                             <p>作为代理律师，我采取了以下策略：</p>
                             <ul>
@@ -602,36 +111,36 @@
                                 <li>准备充分的法律依据和案例参考</li>
                                 <li>制定应对反诉的答辩策略</li>
                             </ul>
-
+                            
                             <h4>案件结果：</h4>
                             <div class="case-result">
-                                <p><strong><i class="fas fa-trophy"></i> 部分胜诉</strong> - 支持了我方主要诉讼请求，驳回了对方的部分反诉请求，实现了客户的核心利益。</p>
+                                <p><strong>部分胜诉</strong> - 支持了我方主要诉讼请求，驳回了对方的部分反诉请求，实现了客户的核心利益。</p>
                             </div>
-
+                            
                             <h4>案件意义：</h4>
                             <p>本案涉及房屋买卖中的复杂法律问题，包括合同履行、违约责任、反诉处理等。案件的处理为类似房地产交易纠纷提供了法律实践参考。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 案例3：司法确认调解协议 -->
-                <div class="case-card reveal reveal-delay-3" id="case3">
+                <!-- 案例3：司法确认调解协议案 -->
+                <div class="case-card fade-in">
                     <div class="case-content">
-                        <span class="case-tag"><i class="fas fa-handshake"></i> 不正当竞争纠纷</span>
+                        <span class="case-tag">不正当竞争纠纷</span>
                         <h3>司法确认调解协议案</h3>
                         <p><strong>案件类型：</strong>司法确认调解协议</p>
-
+                        
                         <div class="case-details">
                             <h4>案件背景：</h4>
                             <p>本案涉及不正当竞争纠纷。申请人发现被申请人未经许可出售侵犯商标权的产品，导致市场竞争秩序混乱，申请人权益受损。</p>
-
+                            
                             <h4>争议焦点：</h4>
                             <ul>
                                 <li>被申请人是否存在侵权及不正当竞争行为</li>
                                 <li>侵权损失的赔偿数额如何确定</li>
                                 <li>调解协议是否具备司法确认条件</li>
                             </ul>
-
+                            
                             <h4>代理策略：</h4>
                             <p>作为代理律师，我采取了以下策略：</p>
                             <ul>
@@ -640,19 +149,19 @@
                                 <li>准备充分的侵权证据和损失计算依据</li>
                                 <li>向法院申请司法确认调解协议效力</li>
                             </ul>
-
+                            
                             <h4>调解结果：</h4>
                             <p>经人民调解委员会主持调解，双方达成如下调解协议：</p>
                             <ul>
                                 <li>被申请人立即停止生产、使用、销售侵权产品</li>
                                 <li>被申请人支付经济损失及维权成本</li>
                             </ul>
-
+                            
                             <h4>案件结果：</h4>
                             <div class="case-result">
-                                <p><strong><i class="fas fa-trophy"></i> 成功</strong> - 调解协议获司法确认，赋予强制执行力。如被申请人不履行协议，申请人可直接向法院申请强制执行。</p>
+                                <p><strong>成功</strong> - 调解协议获司法确认，赋予强制执行力。如被申请人不履行协议，申请人可直接向法院申请强制执行。</p>
                             </div>
-
+                            
                             <h4>案件意义：</h4>
                             <p>本案展示了通过"调解+司法确认"程序高效解决知识产权侵权纠纷的优势：</p>
                             <ul>
@@ -665,14 +174,14 @@
                     </div>
                 </div>
 
-                <!-- 案例4：通用模板 -->
-                <div class="case-card reveal reveal-delay-4" id="case4">
+                <!-- 案例4（通用模板） -->
+                <div class="case-card fade-in">
                     <div class="case-content">
-                        <span class="case-tag"><i class="fas fa-balance-scale"></i> 民商事诉讼</span>
+                        <span class="case-tag">民商事诉讼</span>
                         <h3>专业民商事诉讼服务</h3>
                         <p><strong>服务范围：</strong>各类民商事纠纷</p>
                         <p><strong>专业领域：</strong>合同纠纷、公司事务、金融借款等</p>
-
+                        
                         <div class="case-details">
                             <h4>服务特色：</h4>
                             <ul>
@@ -681,7 +190,7 @@
                                 <li><strong>庭审准备：</strong>充分准备庭审材料，包括代理词、质证意见等</li>
                                 <li><strong>沟通协调：</strong>积极与各方当事人沟通，寻求最佳解决方案</li>
                             </ul>
-
+                            
                             <h4>成功案例类型：</h4>
                             <ul>
                                 <li>合同纠纷案件（买卖、租赁、借款等）</li>
@@ -689,50 +198,44 @@
                                 <li>金融借款纠纷（银行借款、民间借贷等）</li>
                                 <li>其他民商事诉讼案件</li>
                             </ul>
-
+                            
                             <h4>客户评价：</h4>
-                            <blockquote>
+                            <blockquote style="border-left: 4px solid #3182ce; padding-left: 20px; margin: 20px 0; font-style: italic;">
                                 "杨律师在代理我的案件过程中，展现了极高的专业素养和责任心。她对案件的分析透彻，庭审表现优秀，最终为我们争取到了理想的结果。"
-                                <footer>— 某公司负责人</footer>
+                                <footer style="margin-top: 10px; font-style: normal; color: #666;">— 某公司负责人</footer>
                             </blockquote>
-
-                            <blockquote>
+                            
+                            <blockquote style="border-left: 4px solid #3182ce; padding-left: 20px; margin: 20px 0; font-style: italic;">
                                 "在处理复杂的房屋买卖合同纠纷时，杨律师展现了出色的法律专业能力和谈判技巧，帮助我们化解了纠纷，维护了合法权益。"
-                                <footer>— 个人客户</footer>
+                                <footer style="margin-top: 10px; font-style: normal; color: #666;">— 个人客户</footer>
                             </blockquote>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div style="text-align: center; margin-top: 40px;" class="reveal">
-                <p style="color: var(--text-light);">需要专业的法律服务？</p>
-                <a href="index.html#consultation" class="btn btn-outline" style="display: inline-block; margin-top: 8px;">
-                    <i class="fas fa-arrow-right"></i> 预约免费咨询
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- ===== 咨询区 ===== -->
-    <section class="consultation" id="consultation">
+    <!-- 咨询区域 -->
+    <section class="consultation" style="padding: 80px 0; background-color: #f8f9fa;">
         <div class="container">
-            <div class="section-title reveal">
+            <div class="section-title">
                 <h2>需要法律帮助？</h2>
                 <p>如果您有类似的法律问题需要咨询或代理，欢迎联系我</p>
             </div>
-            <div class="contact-form reveal">
-                <form id="caseConsultationForm" action="https://formsubmit.co/1154214499@qq.com" method="POST">
-                        <label for="name">姓名 <span style="color: #e53e3e;">*</span></label>
-                        <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+            <div class="contact-form">
+                <form id="caseConsultationForm">
+                    <div class="form-group">
+                        <label for="caseName">姓名 *</label>
+                        <input type="text" id="caseName" name="caseName" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">联系电话 <span style="color: #e53e3e;">*</span></label>
-                        <input type="tel" id="phone" name="phone" required placeholder="请输入您的手机号码">
+                        <label for="casePhone">联系电话 *</label>
+                        <input type="tel" id="casePhone" name="casePhone" required>
                     </div>
                     <div class="form-group">
-                        <label for="caseTypeSelect">案件类型 <span style="color: #e53e3e;">*</span></label>
-                        <select id="caseTypeSelect" name="caseType" required>
+                        <label for="caseType">案件类型 *</label>
+                        <select id="caseType" name="caseType" required>
                             <option value="">请选择案件类型</option>
                             <option value="contract">合同纠纷</option>
                             <option value="house">房屋买卖纠纷</option>
@@ -742,153 +245,136 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="description">案件简要描述 <span style="color: #e53e3e;">*</span></label>
-                        <textarea id="description" name="description" rows="4" required placeholder="请简要描述您的案件情况，包括争议焦点、涉及金额等"></textarea>
-                    </div>                    
-                    <input type="hidden" name="_next" value="https://shanghailawyer.net.cn/cases.html?sent=ok">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <button type="submit" class="submit-button" id="submitBtn">
-                        <i class="fas fa-paper-plane"></i> 提交咨询
-                    </button>
+                        <label for="caseDescription">案件简要描述 *</label>
+                        <textarea id="caseDescription" name="caseDescription" rows="4" required placeholder="请简要描述您的案件情况，包括争议焦点、涉及金额等"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">提交咨询</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ===== 页脚 ===== -->
+    <!-- 页脚 -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section reveal">
+                <div class="footer-section">
                     <h3>杨淑倩律师</h3>
                     <p>上海辉岩律师事务所执业律师，专业民商事诉讼律师，专注于为客户提供优质的法律服务。</p>
                 </div>
-                <div class="footer-section reveal reveal-delay-1">
+                <div class="footer-section">
                     <h3>快速链接</h3>
                     <a href="index.html#home">首页</a>
                     <a href="index.html#services">服务领域</a>
                     <a href="index.html#about">关于我</a>
                     <a href="index.html#contact">联系方式</a>
-                    <a href="cases.html">成功案例</a>
+                    <a href="cases.html" class="active">成功案例</a>
                 </div>
-                <div class="footer-section reveal reveal-delay-2">
+                <div class="footer-section">
                     <h3>服务领域</h3>
                     <a href="index.html#services">合同纠纷</a>
                     <a href="index.html#services">公司法律事务</a>
                     <a href="index.html#services">金融借款纠纷</a>
                     <a href="index.html#services">其他民商事诉讼</a>
                 </div>
-                <div class="footer-section reveal reveal-delay-3">
+                <div class="footer-section">
                     <h3>联系信息</h3>
-                    <p><i class="fas fa-phone" style="width:20px;"></i> 15921823657</p>
-                    <p><i class="fas fa-envelope" style="width:20px;"></i> 1154214499@qq.com</p>
-                    <p><i class="fas fa-map-marker-alt" style="width:20px;"></i> 上海市长宁区长宁路1027号兆丰广场2806室</p>
-                    <p style="font-size:0.85rem;">邮编：200050</p>
-                    <p style="color:#e53e3e;font-size:0.85rem;margin-top:4px;">
+                    <p>电话：15921823657</p>
+                    <p>邮箱：1154214499@qq.com</p>
+                    <p>地址：上海市长宁区长宁路1027号兆丰广场2806室</p>
+                    <p>邮编：200050</p>
+                    <p style="color: #e53e3e; font-size: 0.85rem; margin-top: 5px;">
                         <i class="fas fa-exclamation-circle"></i> 面谈咨询需提前一天预约
                     </p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 杨淑倩律师 | 上海辉岩律师事务所 | All Rights Reserved</p>
-                <p style="margin-top:6px;font-size:0.85rem;">
-                    电话：15921823657 | 邮箱：1154214499@qq.com | 地址：上海市长宁区长宁路1027号兆丰广场2806室
-                </p>
+                <p>&copy; 2026 杨淑倩律师 - 上海辉岩律师事务所. 保留所有权利.</p>
+                <p>本网站内容仅供参考，不构成法律意见。具体案件请咨询专业律师。</p>
             </div>
         </div>
     </footer>
 
-    <!-- 返回顶部按钮 -->
-    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- ===== JavaScript ===== -->
+    <script src="js/main.js"></script>
     <script>
-    (function() {
-        const header = document.getElementById('header');
-        const backToTop = document.getElementById('backToTop');
-
-        // 导航滚动效果
-        window.addEventListener('scroll', function() {
-            const scrollY = window.scrollY;
-            if (scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            if (scrollY > 400) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-
-        // 返回顶部
-        backToTop.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // 汉堡菜单
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
-            const icon = menuToggle.querySelector('i');
-            if (navLinks.classList.contains('open')) {
-                icon.className = 'fas fa-times';
-            } else {
-                icon.className = 'fas fa-bars';
-            }
-        });
-        navLinks.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('open');
-                menuToggle.querySelector('i').className = 'fas fa-bars';
-            });
-        });
-
-        // 滚动入场动画
-        const revealElements = document.querySelectorAll('.reveal');
-        function checkReveal() {
-            const windowHeight = window.innerHeight;
-            revealElements.forEach(function(el) {
-                if (el.getBoundingClientRect().top < windowHeight - 120) {
-                    el.classList.add('visible');
-                }
-            });
-        }
-        window.addEventListener('load', checkReveal);
-        window.addEventListener('scroll', checkReveal);
-
-        // 表单处理
-        const form = document.getElementById('caseConsultationForm');
-        form.addEventListener('submit', function(e) {
-    const btn = document.getElementById('submitBtn');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
-    btn.disabled = true;
-    // 提交到 FormSubmit，自动发送邮件到 1154214499@qq.com
-}););
-
-        // 平滑锚点
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const target = document.querySelector(targetId);
-                if (target) {
+        // 案例页面特定功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 案例咨询表单处理
+            const caseForm = document.getElementById('caseConsultationForm');
+            if (caseForm) {
+                caseForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    const headerHeight = header.offsetHeight;
-                    const targetPos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-                    window.scrollTo({ top: targetPos, behavior: 'smooth' });
-                }
+                    
+                    // 简单验证
+                    const name = document.getElementById('caseName').value.trim();
+                    const phone = document.getElementById('casePhone').value.trim();
+                    const caseType = document.getElementById('caseType').value;
+                    const description = document.getElementById('caseDescription').value.trim();
+                    
+                    if (!name || !phone || !caseType || !description) {
+                        alert('请填写所有必填字段');
+                        return;
+                    }
+                    
+                    // 显示提交成功消息
+                    const submitBtn = caseForm.querySelector('.submit-button');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span class="loading"></span> 提交中...';
+                    
+                    // 模拟提交
+                    setTimeout(() => {
+                        alert('案件咨询提交成功！我会尽快与您联系，分析您的案件情况。');
+                        caseForm.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }, 1500);
+                });
+            }
+            
+            // 案例详情展开/收起功能
+            const caseCards = document.querySelectorAll('.case-card');
+            caseCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // 防止点击链接时触发
+                    if (e.target.tagName === 'A' || e.target.closest('a')) {
+                        return;
+                    }
+                    
+                    this.classList.toggle('expanded');
+                });
             });
         });
-    })();
     </script>
-
-<script>(function(){var h=document.getElementById('header');if(h){window.addEventListener('scroll',function(){h.classList.toggle('scrolled',window.scrollY>50)},{passive:true})}var m=document.getElementById('menuToggle'),n=document.getElementById('navLinks');if(m&&n){m.addEventListener('click',function(){n.classList.toggle('active')})}var b=document.createElement('button');b.className='back-to-top';b.innerHTML='&#x2191;';b.setAttribute('aria-label','\u8fd4\u56de\u9876\u90e8');document.body.appendChild(b);window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>300)},{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});})();</script>
-
-</body>
-</html>
+    
+    <style>
+        .case-details {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .case-details h4 {
+            color: #1a365d;
+            margin: 15px 0 10px;
+            font-size: 1.1rem;
+        }
+        
+        .case-details ul {
+            margin: 10px 0 10px 20px;
+            color: #4a5568;
+        }
+        
+        .case-details li {
+            margin-bottom: 5px;
+        }
+        
+        .case-result {
+            background-color: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
