@@ -576,28 +576,16 @@
             e.stopPropagation();
             const form = e.target;
             const formData = new FormData(form);
-            // 用URL编码格式提交到Formspree
-            const params = new URLSearchParams();
-            params.append('姓名', formData.get('姓名'));
-            params.append('电话', formData.get('电话'));
-            params.append('咨询内容', formData.get('咨询内容'));
-            // 提交到Formspree
-            fetch('https://formspree.io/f/1154214499', {
-                method: 'POST',
-                body: params
-            }).then(function(response) {
-                if(response.ok || response.status === 200) {
-                    alert('感谢您的咨询！杨律师会尽快与您联系。');
-                    form.reset();
-                    hideConsultPanel();
-                } else {
-                    alert('提交失败，请重试或直接发邮件。');
-                }
-            }).catch(function() {
-                alert('提交成功！杨律师会尽快与您联系。');
-                form.reset();
-                hideConsultPanel();
-            });
+            const name = formData.get('姓名');
+            const phone = formData.get('电话');
+            const content = formData.get('咨询内容');
+            // 打开邮件客户端（不会显示邮箱内容）
+            const subject = '法律咨询-' + name;
+            const body = '姓名: ' + name + '\n电话: ' + phone + '\n\n咨询内容:\n' + content;
+            window.location.href = 'mailto:1154214499@qq.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            form.reset();
+            hideConsultPanel();
+            alert('已打开邮件窗口，请点击发送');
             return false;
         }
     </script>
