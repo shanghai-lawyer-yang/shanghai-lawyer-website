@@ -432,7 +432,7 @@
         <div class="consult-panel-body">
             <p>您好！我是杨淑倩律师。</p>
             <p>请留下您的联系方式和咨询内容，我会尽快与您联系。</p>
-            <form id="consultForm" action="https://formspree.io/f/1154214499" method="post" onsubmit="submitConsult(event)">
+            <form id="consultForm" onsubmit="submitConsult(event)">
                 <input type="text" name="姓名" placeholder="您的姓名" required>
                 <input type="tel" name="电话" placeholder="联系电话" required>
                 <textarea name="咨询内容" placeholder="请描述您的法律问题..." rows="4" required></textarea>
@@ -576,31 +576,14 @@
             e.stopPropagation();
             const form = e.target;
             const formData = new FormData(form);
-            const data = {
-                姓名: formData.get('姓名'),
-                电话: formData.get('电话'),
-                咨询内容: formData.get('咨询内容')
-            };
-            // 使用Formspree的JSON API
-            fetch('https://formspree.io/f/1154214499', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(data)
-            }).then(function(response) {
-                if(response.ok) {
-                    alert('感谢您的咨询！我会尽快与您联系。');
-                    form.reset();
-                    hideConsultPanel();
-                } else {
-                    alert('提交成功！杨律师会尽快联系您。');
-                    form.reset();
-                    hideConsultPanel();
-                }
-            }).catch(function() {
-                alert('感谢您的咨询！我会尽快与您联系。');
-                form.reset();
-                hideConsultPanel();
-            });
+            const name = formData.get('姓名');
+            const phone = formData.get('电话');
+            const content = formData.get('咨询内容');
+            // 直接打开邮件
+            const mailto = 'mailto:1154214499@qq.com?subject=法律咨询-' + encodeURIComponent(name) + '&body=' + encodeURIComponent('姓名: ' + name + '\\n电话: ' + phone + '\\n\\n咨询内容:\\n' + content);
+            window.location.href = mailto;
+            form.reset();
+            hideConsultPanel();
             return false;
         }
     </script>
