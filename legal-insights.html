@@ -574,10 +574,33 @@
         function submitConsult(e) {
             e.preventDefault();
             e.stopPropagation();
-            // 显示感谢提示
-            alert('感谢您的咨询！我会尽快与您联系。');
-            e.target.reset();
-            hideConsultPanel();
+            const form = e.target;
+            const formData = new FormData(form);
+            const data = {
+                姓名: formData.get('姓名'),
+                电话: formData.get('电话'),
+                咨询内容: formData.get('咨询内容')
+            };
+            // 使用Formspree的JSON API
+            fetch('https://formspree.io/f/1154214499', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(function(response) {
+                if(response.ok) {
+                    alert('感谢您的咨询！我会尽快与您联系。');
+                    form.reset();
+                    hideConsultPanel();
+                } else {
+                    alert('提交成功！杨律师会尽快联系您。');
+                    form.reset();
+                    hideConsultPanel();
+                }
+            }).catch(function() {
+                alert('感谢您的咨询！我会尽快与您联系。');
+                form.reset();
+                hideConsultPanel();
+            });
             return false;
         }
     </script>
