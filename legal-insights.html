@@ -579,13 +579,10 @@
             const name = formData.get('姓名');
             const phone = formData.get('电话');
             const content = formData.get('咨询内容');
-            // 打开邮件客户端（不会显示邮箱内容）
-            const subject = '法律咨询-' + name;
-            const body = '姓名: ' + name + '\n电话: ' + phone + '\n\n咨询内容:\n' + content;
-            window.location.href = 'mailto:1154214499@qq.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            // 显示确认信息并关闭面板
             form.reset();
             hideConsultPanel();
-            alert('已打开邮件窗口，请点击发送');
+            alert('感谢您的咨询！\n\n如需直接联系杨律师，请发邮件至：\n1154214499@qq.com\n\n或致电：15921823657');
             return false;
         }
     </script>
