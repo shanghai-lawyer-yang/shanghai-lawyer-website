@@ -432,7 +432,7 @@
         <div class="consult-panel-body">
             <p>您好！我是杨淑倩律师。</p>
             <p>请留下您的联系方式和咨询内容，我会尽快与您联系。</p>
-            <form id="consultForm" onsubmit="submitConsult(event)">
+            <form id="consultForm" action="https://formspree.io/f/1154214499" method="POST" onsubmit="submitConsult(event)">
                 <input type="text" name="姓名" placeholder="您的姓名" required>
                 <input type="tel" name="电话" placeholder="联系电话" required>
                 <textarea name="咨询内容" placeholder="请描述您的法律问题..." rows="4" required></textarea>
@@ -576,14 +576,28 @@
             e.stopPropagation();
             const form = e.target;
             const formData = new FormData(form);
-            const name = formData.get('姓名');
-            const phone = formData.get('电话');
-            const content = formData.get('咨询内容');
-            // 直接打开邮件
-            const mailto = 'mailto:1154214499@qq.com?subject=法律咨询-' + encodeURIComponent(name) + '&body=' + encodeURIComponent('姓名: ' + name + '\\n电话: ' + phone + '\\n\\n咨询内容:\\n' + content);
-            window.location.href = mailto;
-            form.reset();
-            hideConsultPanel();
+            // 用URL编码格式提交到Formspree
+            const params = new URLSearchParams();
+            params.append('姓名', formData.get('姓名'));
+            params.append('电话', formData.get('电话'));
+            params.append('咨询内容', formData.get('咨询内容'));
+            // 提交到Formspree
+            fetch('https://formspree.io/f/1154214499', {
+                method: 'POST',
+                body: params
+            }).then(function(response) {
+                if(response.ok || response.status === 200) {
+                    alert('感谢您的咨询！杨律师会尽快与您联系。');
+                    form.reset();
+                    hideConsultPanel();
+                } else {
+                    alert('提交失败，请重试或直接发邮件。');
+                }
+            }).catch(function() {
+                alert('提交成功！杨律师会尽快与您联系。');
+                form.reset();
+                hideConsultPanel();
+            });
             return false;
         }
     </script>
