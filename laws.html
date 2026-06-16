@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法规速递 - 杨淑倩律师 | 上海辉岩律师事务所</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .legal-article {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+        .legal-article:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        .legal-article .case-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        .legal-article h2 {
+            color: #1a365d;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .legal-article h3 {
+            color: #2d3748;
+            font-size: 1.2rem;
+            margin: 25px 0 12px;
+        }
+        .legal-article p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .legal-article ul {
+            margin: 10px 0 15px 20px;
+            color: #4a5568;
+        }
+        .legal-article li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        .legal-article .result-box {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .legal-article .result-box-support {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .legal-article .result-box-against {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .legal-article .highlight-box {
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        .legal-article .tag {
+            display: inline-block;
+            background: #edf2f7;
+            color: #2d3748;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin: 2px;
+        }
+        .legal-article table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .legal-article table th {
+            background: #1a365d;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: left;
+        }
+        .legal-article table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+        .legal-article table tr:last-child td {
+            border-bottom: none;
+        }
+        .legal-article .life-tips {
+            background: #fffbeb;
+            border-left: 4px solid #d69e2e;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .legal-article .legal-basis {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .legal-article .case-info {
+            color: #718096;
+            font-size: 0.85rem;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #3182ce, transparent);
+            margin: 10px 0 25px;
+        }
+        @media (max-width: 768px) {
+            .legal-article {
+                padding: 25px 20px;
+            }
+            .legal-article h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">杨淑倩<span>律师</span></a>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#services">服务领域</a></li>
+                    <li><a href="index.html#about">关于我</a></li>
+                    <li><a href="cases.html">成功案例</a></li>
+                    <li><a href="legal-insights.html">法规速递</a></li>
+                    <li><a href="laws.html" class="active">法规速递</a></li>
+                    <li><a href="index.html#contact">联系方式</a></li>
+                    <li><a href="index.html#consultation">在线咨询</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="hero" id="home" style="padding: 120px 0 80px; margin-top: 80px;">
+        <div class="container">
+            <h1>法规速递</h1>
+            <p>每月更新最新民商事法律法规与司法解释动态，帮助您及时了解法律变化。</p>
+        </div>
+    </section>
+
+        <!-- 法规速递内容 -->
+    <section class="legal-insights" style="padding: 40px 0 80px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>本月新法速递</h2>
+                <p>2026年6月最新民商事法律法规动态</p>
+            </div>
+
+            <div class="legal-article fade-in">
+                <div class="article-header">
+                    <span class="article-date">2026年6月</span>
+                </div>
+                <h2>暂无内容，更新中</h2>
+                <p>每月更新最新民商事法律动态，敬请期待。</p>
+            </div>
+        </div>
+    </section><!-- 咨询区域 -->
+    <section class="consultation" style="padding: 80px 0; background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>需要法律帮助？</h2>
+                <p>如果您有法律问题需要咨询，欢迎联系我</p>
+            </div>
+            <div style="text-align: center; padding: 20px;">
+                <p style="font-size: 1.1rem; margin-bottom: 15px;"><strong>电话：</strong>15921823657（杨律师）</p>
+                <p style="font-size: 1.1rem; margin-bottom: 15px;"><strong>邮箱：</strong>1154214499@qq.com</p>
+                <p style="font-size: 1.1rem;"><strong>地址：</strong>上海市长宁区长宁路1027号兆丰广场2806室</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>杨淑倩律师</h3>
+                    <p>上海辉岩律师事务所执业律师，专业民商事诉讼律师，专注于为客户提供优质的法律服务。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <a href="index.html">首页</a>
+                    <a href="cases.html">成功案例</a>
+                    <a href="legal-insights.html">法规速递</a>
+                    <a href="index.html#contact">联系方式</a>
+                    <a href="index.html#consultation">在线咨询</a>
+                </div>
+                <div class="footer-section">
+                    <h3>服务领域</h3>
+                    <a href="index.html#services">合同纠纷</a>
+                    <a href="index.html#services">公司法律事务</a>
+                    <a href="index.html#services">金融借款纠纷</a>
+                    <a href="index.html#services">其他民商事诉讼</a>
+                </div>
+                <div class="footer-section">
+                    <h3>联系信息</h3>
+                    <p>电话：15921823657</p>
+                    <p>邮箱：1154214499@qq.com</p>
+                    <p>地址：上海市长宁区长宁路1027号兆丰广场2806室</p>
+                    <p>邮编：200050</p>
+                    <p style="color: #e53e3e; font-size: 0.85rem; margin-top: 5px;">
+                        <i class="fas fa-exclamation-circle"></i> 面谈咨询需提前一天预约
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 杨淑倩律师 - 上海辉岩律师事务所. 保留所有权利.</p>
+                <p>本网站内容仅供参考，不构成法律意见。具体案件请咨询专业律师。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    
+    <!-- 悬浮咨询按钮 -->
+    <div class="fixed-consult-btn" onclick="showConsultPanel()">
+        <i class="fas fa-comments"></i> 在线咨询
+    </div>
+    
+    <!-- 咨询面板 -->
+    <div class="consult-panel" id="consultPanel">
+        <div class="consult-panel-header">
+            <span>扫码咨询杨律师</span>
+            <button onclick="hideConsultPanel()">&times;</button>
+        </div>
+        <div class="consult-panel-body" style="text-align: center;">
+            <p>长按识别二维码，添加杨律师微信</p>
+            <img src="素材/微信二维码.png" alt="杨律师微信二维码" style="width: 200px; height: 200px; margin: 15px 0; border-radius: 8px;">
+            <p style="color: #666; font-size: 0.85rem;">或直接拨打电话：<strong>15921823657</strong></p>
+        </div>
+    </div>
+    
+    <style>
+        .fixed-consult-btn {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(26,54,93,0.3);
+            z-index: 9999;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .fixed-consult-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(26,54,93,0.4);
+        }
+        .consult-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 80px;
+            transform: translateY(-50%);
+            width: 320px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+            z-index: 9999;
+            overflow: hidden;
+        }
+        .consult-panel.show {
+            display: block;
+        }
+        .consult-panel-header {
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .consult-panel-header button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .consult-panel-body {
+            padding: 20px;
+        }
+        .consult-panel-body p {
+            margin: 0 0 15px;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        .consult-panel-body input,
+        .consult-panel-body textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            box-sizing: border-box;
+        }
+        .consult-panel-body input:focus,
+        .consult-panel-body textarea:focus {
+            outline: none;
+            border-color: #3182ce;
+        }
+        .consult-panel-body button[type="submit"] {
+            width: 100%;
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .consult-panel-body button[type="submit"]:hover {
+            background: linear-gradient(135deg, #2b6cb0, #3182ce);
+        }
+        @media (max-width: 480px) {
+            .fixed-consult-btn {
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            .consult-panel {
+                top: 50%;
+                right: 60px;
+                transform: translateY(-50%);
+                left: 10px;
+                width: auto;
+            }
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 淡入动画
+            const articles = document.querySelectorAll('.legal-article');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            articles.forEach(article => {
+                article.style.opacity = '0';
+                article.style.transform = 'translateY(20px)';
+                article.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(article);
+            });
+        });
+        
+        // 咨询面板功能
+        function showConsultPanel() {
+            document.getElementById('consultPanel').classList.add('show');
+        }
+        function hideConsultPanel() {
+            document.getElementById('consultPanel').classList.remove('show');
+        }
+        function submitConsult(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const form = e.target;
+            const formData = new FormData(form);
+            const name = formData.get('姓名');
+            const phone = formData.get('电话');
+            const content = formData.get('咨询内容');
+            // 直接打开邮件窗口，让客户发送
+            const subject = '法律咨询-' + name;
+            const body = '姓名: ' + name + '\n电话: ' + phone + '\n\n咨询内容:\n' + content;
+            window.location.href = 'mailto:1154214499@qq.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            form.reset();
+            hideConsultPanel();
+            return false;
+        }
+    </script>
+</body>
+</html>
