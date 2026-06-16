@@ -414,18 +414,13 @@
     <!-- 咨询面板 -->
     <div class="consult-panel" id="consultPanel">
         <div class="consult-panel-header">
-            <span>杨淑倩律师 - 在线咨询</span>
+            <span>扫码咨询杨律师</span>
             <button onclick="hideConsultPanel()">&times;</button>
         </div>
-        <div class="consult-panel-body">
-            <p>您好！我是杨淑倩律师。</p>
-            <p>请留下您的联系方式和咨询内容，我会尽快与您联系。</p>
-            <form id="consultForm" action="https://formspree.io/f/1154214499" method="POST" onsubmit="submitConsult(event)">
-                <input type="text" name="姓名" placeholder="您的姓名" required>
-                <input type="tel" name="电话" placeholder="联系电话" required>
-                <textarea name="咨询内容" placeholder="请描述您的法律问题..." rows="4" required></textarea>
-                <button type="submit">提交咨询</button>
-            </form>
+        <div class="consult-panel-body" style="text-align: center;">
+            <p>长按识别二维码，添加杨律师微信</p>
+            <img src="素材/微信二维码.png" alt="杨律师微信二维码" style="width: 200px; height: 200px; margin: 15px 0; border-radius: 8px;">
+            <p style="color: #666; font-size: 0.85rem;">或直接拨打电话：<strong>15921823657</strong></p>
         </div>
     </div>
     
