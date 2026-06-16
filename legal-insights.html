@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法律资讯 - 杨淑倩律师 | 上海辉岩律师事务所</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .legal-article {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+        .legal-article:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        .legal-article .case-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        .legal-article h2 {
+            color: #1a365d;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .legal-article h3 {
+            color: #2d3748;
+            font-size: 1.2rem;
+            margin: 25px 0 12px;
+        }
+        .legal-article p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .legal-article ul {
+            margin: 10px 0 15px 20px;
+            color: #4a5568;
+        }
+        .legal-article li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        .legal-article .result-box {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .legal-article .result-box-support {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .legal-article .result-box-against {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .legal-article .highlight-box {
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        .legal-article .tag {
+            display: inline-block;
+            background: #edf2f7;
+            color: #2d3748;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin: 2px;
+        }
+        .legal-article table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .legal-article table th {
+            background: #1a365d;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: left;
+        }
+        .legal-article table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+        .legal-article table tr:last-child td {
+            border-bottom: none;
+        }
+        .legal-article .life-tips {
+            background: #fffbeb;
+            border-left: 4px solid #d69e2e;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .legal-article .legal-basis {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .legal-article .case-info {
+            color: #718096;
+            font-size: 0.85rem;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #3182ce, transparent);
+            margin: 10px 0 25px;
+        }
+        @media (max-width: 768px) {
+            .legal-article {
+                padding: 25px 20px;
+            }
+            .legal-article h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">杨淑倩<span>律师</span></a>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#services">服务领域</a></li>
+                    <li><a href="index.html#about">关于我</a></li>
+                    <li><a href="cases.html">成功案例</a></li>
+                    <li><a href="legal-insights.html" class="active">法律资讯</a></li>
+                    <li><a href="index.html#contact">联系方式</a></li>
+                    <li><a href="index.html#consultation">在线咨询</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="hero" id="home" style="padding: 120px 0 80px; margin-top: 80px;">
+        <div class="container">
+            <h1>法律资讯</h1>
+            <p>精选最高人民法院入库参考案例，以通俗易懂的方式解读法律规则，帮助您了解日常生活中的法律风险与权益。</p>
+        </div>
+    </section>
+
+    <!-- 法律资讯内容 -->
+    <section class="legal-insights" style="padding: 40px 0 80px;">
+        <div class="container">
+
+            <!-- ======== 案例1 ======== -->
+            <div class="legal-article fade-in">
+                <span class="case-number">入库编号 2024-07-2-084-002</span>
+                <h2>买到过期食品，能赔多少钱？</h2>
+                <div class="divider"></div>
+
+                <h3>事情经过</h3>
+                <p>2016年2月，张某在上海某生鲜超市买到<strong>46枚过期咸鸭蛋</strong>（单价2.2元，总价101.2元）。不过他做了一件"特别"的事——<strong>分46次刷卡付款</strong>，每次只买1枚，开1张小票。然后拿着46张小票起诉商家，要求按每单最低赔1000元计算，合计索赔<strong>46,000元</strong>。</p>
+
+                <h3>法院怎么判？</h3>
+                <div class="result-box-support">
+                    ✅ 退货退款 101.2元 &nbsp;|&nbsp; ✅ 按总价10倍赔偿 <strong>1012元</strong> &nbsp;|&nbsp; ✅ 维权合理费用100元
+                </div>
+                <div class="result-box-against">
+                    ❌ 按每单赔1000元×46次=46000元（不支持）
+                </div>
+                <p style="color:#718096; font-size:0.9rem;">二审上海一中院：维持原判。</p>
+
+                <h3>最高院的裁判要旨</h3>
+                <div class="highlight-box">
+                    分多次小额支付，并主张每次结算赔偿1000元的，不符合消费者通常交易习惯。人民法院应当在合理生活消费需要范围内，将分次支付总价款作为计算惩罚性赔偿金的基数。
+                </div>
+                <p><strong>简单说：</strong>同一批过期食品，不能拆成多份赔偿。总价101.2元×10倍=1012元。</p>
+
+                <h3>三个要点</h3>
+                <ul>
+                    <li><strong>分46次付 ≠ 分46次交易</strong>——同一消费者、同一商家、同一批过期食品，就是一次买卖，不能拆开算。</li>
+                    <li><strong>"知假买假"≠不受保护，但要有底线</strong>——职业打假人仍可主张赔偿，但只能按合理生活消费需要范围支持。</li>
+                    <li><strong>总价款才是计算基数</strong>——46枚咸鸭蛋总价101.2元未超出生活消费需要，10倍赔偿=1012元。</li>
+                </ul>
+
+                <h3>生活提示</h3>
+                <div class="life-tips">
+                    <ul>
+                        <li><strong>消费者：</strong>买到过期食品，放心维权，法律撑你。</li>
+                        <li><strong>商家：</strong>别侥幸，过期食品哪怕2块钱，也可能赔10倍。</li>
+                        <li><strong>职业索赔者：</strong>拆单薅赔偿，此路不通。</li>
+                    </ul>
+                </div>
+
+                <h3>法律依据</h3>
+                <div class="legal-basis">
+                    《中华人民共和国食品安全法》第148条<br>
+                    《最高人民法院关于审理食品药品惩罚性赔偿纠纷案件适用法律若干问题的解释》第13条
+                </div>
+
+                <div class="case-info">
+                    原审：上海市浦东新区法院 (2016)沪0115民初27746号 → 上海市第一中级人民法院 (2016)沪01民终10490号
+                    <br><span class="tag">食品安全</span> <span class="tag">惩罚性赔偿</span> <span class="tag">消费者权益</span>
+                </div>
+            </div>
+
+            <!-- ======== 案例2 ======== -->
+            <div class="legal-article fade-in">
+                <span class="case-number">入库编号 2023-08-2-084-028</span>
+                <h2>欠公司的出资，能用公司欠我的钱抵吗？</h2>
+                <div class="divider"></div>
+
+                <h3>事情经过</h3>
+                <p>北京某建材公司给北京某科技公司供货，货款<strong>38万多</strong>收不回来。起诉后发现：科技公司的股东马某认缴出资<strong>165万</strong>，实际只缴了<strong>61.75万</strong>，还剩<strong>103.25万</strong>没到位。马某辩称：我替公司垫付了房租、工资等大量资金，公司欠我的钱，正好和我没缴的出资抵销——公司还开过股东会决议同意了的。</p>
+
+                <h3>法院查明的事实</h3>
+                <ul>
+                    <li>股东会决议确实开了，但<strong>没去工商局备案</strong></li>
+                    <li>备案的章程里写的还是<strong>"货币出资"</strong>，不是"债权出资"</li>
+                    <li>2018年公司已经<strong>被起诉、被执行、名下没财产</strong></li>
+                    <li>企业年报显示：2018年实缴<strong>61.75万</strong>，不是165万</li>
+                </ul>
+
+                <h3>法院怎么判？</h3>
+                <div class="result-box-support">
+                    ✅ 公司支付货款38万+利息 &nbsp;|&nbsp; ✅ 马某在未出资<strong>103.25万元</strong>范围内承担补充赔偿责任
+                </div>
+                <div class="result-box-against">
+                    ❌ 不支持马某用"公司欠我的债"抵销出资义务
+                </div>
+                <p style="color:#718096; font-size:0.9rem;">二审北京一中院：维持原判。</p>
+
+                <h3>最高院的裁判要旨</h3>
+                <div class="highlight-box">
+                    股东用对公司的债权抵销出资义务，必须同时满足三个条件：①修改章程为债权出资；②决议时公司有充足清偿能力；③章程已工商备案并公示。否则，债权人有权要求股东在未出资本息范围内承担补充赔偿责任。
+                </div>
+
+                <h3>三个核心条件</h3>
+                <table>
+                    <tr><th>条件</th><th>说明</th></tr>
+                    <tr><td>① 修改章程</td><td>必须通过股东会决议，把出资方式从"货币"改成"债权出资"，并确认实缴到位</td></tr>
+                    <tr><td>② 公司有清偿能力</td><td>做出决议时，公司要有能力还清所有外部债务，不能变相让股东"优先拿钱"</td></tr>
+                    <tr><td>③ 备案+公示</td><td>修改后的章程必须去工商局备案，并在企业信用信息公示系统公示</td></tr>
+                </table>
+
+                <h3>新旧公司法衔接</h3>
+                <p><strong>旧法（2018年公司法，本案适用）：</strong>没有明确列举"债权"可以作为出资方式，实践中争议较大。</p>
+                <p><strong>新法（2023年修订，2024年7月1日起施行）：</strong>第48条明确列举"债权"为合法非货币财产出资方式。股东以对公司享有的债权出资，法律上已经不存在障碍了。</p>
+                <p><strong>但注意：本案三个条件的约束依然有效！</strong></p>
+                <ul>
+                    <li>✅ 要<strong>评估作价</strong>（新法第48条、第50条）</li>
+                    <li>✅ 要通过<strong>章程修改并公示</strong>（新法第40条、第46条）</li>
+                    <li>✅ <strong>不能损害其他债权人利益</strong>（新公司法下的资本维持原则）</li>
+                </ul>
+
+                <h3>生活提示</h3>
+                <div class="life-tips">
+                    <ul>
+                        <li><strong>股东/创业者：</strong>公司欠你的钱≠可以不交出资！想用债权抵出资，要走正式程序——股东会决议→修改章程→评估→备案公示。</li>
+                        <li><strong>债权人/供货方：</strong>如果对方公司股东出资没缴足，可以直接起诉股东在未出资范围内承担补充赔偿责任。</li>
+                        <li><strong>别等公司不行了才操作：</strong>公司已经资不抵债时再搞"债抵出资"，法院不认。</li>
+                    </ul>
+                </div>
+
+                <h3>法律依据</h3>
+                <div class="legal-basis">
+                    《中华人民共和国公司法》（2023年修订）第40条、第46条、第48条、第50条<br>
+                    《中华人民共和国民法典》第568条<br>
+                    《最高人民法院关于适用〈中华人民共和国企业破产法〉若干问题的规定（二）》第46条
+                </div>
+
+                <div class="case-info">
+                    原审：北京市门头沟区法院 (2020)京0109民初1877号 → 北京市第一中级人民法院 (2021)京01民终4078号
+                    <br><span class="tag">公司法</span> <span class="tag">股东出资</span> <span class="tag">债权抵销</span>
+                </div>
+            </div>
+
+            <!-- ======== 案例3 ======== -->
+            <div class="legal-article fade-in">
+                <span class="case-number">最高院审判委员会讨论通过（2025年8月28日发布）</span>
+                <h2>关联账号导数据，算不正当竞争吗？</h2>
+                <div class="divider"></div>
+
+                <h3>事情经过</h3>
+                <p>某网络公司（甲网站）是招聘平台，企业用户可以在上面下载求职者简历。某信息公司（乙网站）也做招聘服务，开发了一个<strong>"关联外网账号"</strong>功能——企业用户输入自己在甲网站的账号密码后，就可以把甲网站的简历同步到乙网站自己的账号里统一管理。甲网站起诉，说乙网站这是<strong>绕过验证码抓数据、不正当竞争</strong>，索赔<strong>500万元</strong>。</p>
+
+                <h3>法院怎么判？</h3>
+                <div class="result-box-support">
+                    ✅ 乙网站的行为<strong>不构成</strong>不正当竞争
+                </div>
+                <div class="result-box-against">
+                    ❌ 甲网站的全部诉讼请求被驳回
+                </div>
+                <p style="color:#718096; font-size:0.9rem;">一审（上海杨浦法院）：驳回 &nbsp;|&nbsp; 二审（上海知识产权法院）：维持原判</p>
+
+                <h3>最高院的裁判要旨</h3>
+                <div class="highlight-box">
+                    网络平台提供关联账号服务，经用户授权后转移其在关联平台获取的数据，为用户在合理范围内处理数据提供便利，未扰乱市场竞争秩序的，不构成不正当竞争。
+                </div>
+
+                <h3>三个关键理由</h3>
+                <ul>
+                    <li><strong>关联账号服务本身是合法的</strong>——用户将自己有权处理的数据在不同平台间转移，是合法正当的行为。</li>
+                    <li><strong>用户授权是关键</strong>——不是乙网站自己去偷数据，而是企业用户自己输入账号密码、自己选择同步。乙网站只是提供了一个工具。</li>
+                    <li><strong>数据没有被"公共化"</strong>——同步到乙网站的简历只能在自己账号内查看，其他企业用户搜不到，不损害求职者权益。</li>
+                </ul>
+
+                <h3>三个要点</h3>
+                <ul>
+                    <li><strong>数据属于用户，用户有权转移</strong>——企业合法获取的简历数据，有权转移到自己使用的其他工具上统一管理。</li>
+                    <li><strong>不能因为"动了我的蛋糕"就说别人不正当</strong>——只要手段正当（用户授权+合理使用），即使客观上分流了用户，也不构成不正当竞争。</li>
+                    <li><strong>"技术手段"要看实质用途</strong>——用程序读取验证码是实现关联功能的必要技术手段，不构成"破坏他人服务正常运行"。</li>
+                </ul>
+
+                <h3>生活提示</h3>
+                <div class="life-tips">
+                    <ul>
+                        <li><strong>企业：</strong>你的数据不等于你的垄断权——用户对自己合法获取的数据有处置权。</li>
+                        <li><strong>做关联/API类产品时：</strong>确保有用户明确授权 + 数据使用范围合理，就能合法运营。</li>
+                        <li><strong>平台想要保护数据：</strong>不能只靠验证码这类简单防护。</li>
+                    </ul>
+                </div>
+
+                <h3>法律依据</h3>
+                <div class="legal-basis">
+                    《中华人民共和国反不正当竞争法》第2条、第12条
+                </div>
+
+                <div class="case-info">
+                    原审：上海市杨浦区法院 (2017)沪0110民初25167号 → 上海知识产权法院 (2019)沪73民终263号
+                    <br><span class="tag">数据竞争</span> <span class="tag">关联账号</span> <span class="tag">不正当竞争</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 咨询区域 -->
+    <section class="consultation" style="padding: 80px 0; background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>需要法律帮助？</h2>
+                <p>如果您有类似的法律问题需要咨询或代理，欢迎联系我</p>
+            </div>
+            <div class="contact-form">
+                <form id="legalConsultationForm" action="https://formspree.io/f/1154214499" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="legalName">姓名 *</label>
+                        <input type="text" id="legalName" name="legalName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="legalPhone">联系电话 *</label>
+                        <input type="tel" id="legalPhone" name="legalPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="legalMessage">咨询内容 *</label>
+                        <textarea id="legalMessage" name="legalMessage" rows="4" required placeholder="请描述您遇到的法律问题"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">提交咨询</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>杨淑倩律师</h3>
+                    <p>上海辉岩律师事务所执业律师，专业民商事诉讼律师，专注于为客户提供优质的法律服务。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <a href="index.html">首页</a>
+                    <a href="cases.html">成功案例</a>
+                    <a href="legal-insights.html">法律资讯</a>
+                    <a href="index.html#contact">联系方式</a>
+                    <a href="index.html#consultation">在线咨询</a>
+                </div>
+                <div class="footer-section">
+                    <h3>服务领域</h3>
+                    <a href="index.html#services">合同纠纷</a>
+                    <a href="index.html#services">公司法律事务</a>
+                    <a href="index.html#services">金融借款纠纷</a>
+                    <a href="index.html#services">其他民商事诉讼</a>
+                </div>
+                <div class="footer-section">
+                    <h3>联系信息</h3>
+                    <p>电话：15921823657</p>
+                    <p>邮箱：1154214499@qq.com</p>
+                    <p>地址：上海市长宁区长宁路1027号兆丰广场2806室</p>
+                    <p>邮编：200050</p>
+                    <p style="color: #e53e3e; font-size: 0.85rem; margin-top: 5px;">
+                        <i class="fas fa-exclamation-circle"></i> 面谈咨询需提前一天预约
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 杨淑倩律师 - 上海辉岩律师事务所. 保留所有权利.</p>
+                <p>本网站内容仅供参考，不构成法律意见。具体案件请咨询专业律师。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 淡入动画
+            const articles = document.querySelectorAll('.legal-article');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            articles.forEach(article => {
+                article.style.opacity = '0';
+                article.style.transform = 'translateY(20px)';
+                article.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(article);
+            });
+        });
+    </script>
+</body>
+</html>
