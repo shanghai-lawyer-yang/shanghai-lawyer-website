@@ -432,10 +432,10 @@
         <div class="consult-panel-body">
             <p>您好！我是杨淑倩律师。</p>
             <p>请留下您的联系方式和咨询内容，我会尽快与您联系。</p>
-            <form id="consultForm" onsubmit="submitConsult(event)">
-                <input type="text" placeholder="您的姓名" required>
-                <input type="tel" placeholder="联系电话" required>
-                <textarea placeholder="请描述您的法律问题..." rows="4" required></textarea>
+            <form id="consultForm" action="https://formspree.io/f/1154214499" method="post" onsubmit="submitConsult(event)">
+                <input type="text" name="姓名" placeholder="您的姓名" required>
+                <input type="tel" name="电话" placeholder="联系电话" required>
+                <textarea name="咨询内容" placeholder="请描述您的法律问题..." rows="4" required></textarea>
                 <button type="submit">提交咨询</button>
             </form>
         </div>
@@ -573,9 +573,12 @@
         }
         function submitConsult(e) {
             e.preventDefault();
+            e.stopPropagation();
+            // 显示感谢提示
             alert('感谢您的咨询！我会尽快与您联系。');
             e.target.reset();
             hideConsultPanel();
+            return false;
         }
     </script>
 </body>
