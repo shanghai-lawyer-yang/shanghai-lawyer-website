@@ -255,7 +255,6 @@ function initAnimations() {
 // 联系表单处理
 function initContactForm() {
     // 这里可以添加联系表单的特定逻辑
-    // 例如：电话号码格式化、地址自动补全等
 }
 
 // 服务案例切换
@@ -285,42 +284,13 @@ function initCaseTabs() {
     });
 }
 
-// 页面加载进度条
-function initProgressBar() {
-    const progressBar = document.createElement('div');
-    progressBar.className = 'progress-bar';
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background-color: var(--accent-color);
-        z-index: 1001;
-        transition: width 0.3s;
-    `;
-    
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', function() {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        progressBar.style.width = scrolled + '%';
-    });
-}
-
-// 初始化进度条
-initProgressBar();
-
-// 添加移动端菜单按钮（如果不存在）
+// 添加移动端菜单按钮
 function addMobileMenuButton() {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelector('.nav-links');
     
     if (!navbar || !navLinks) return;
     
-    // 检查是否已存在菜单按钮
     if (!document.querySelector('.menu-toggle')) {
         const menuToggle = document.createElement('button');
         menuToggle.className = 'menu-toggle';
@@ -328,31 +298,26 @@ function addMobileMenuButton() {
         
         navbar.appendChild(menuToggle);
         
-        // 重新初始化移动菜单
         initMobileMenu();
     }
 }
 
-// 在窗口大小改变时检查是否需要添加移动菜单
 window.addEventListener('resize', function() {
     if (window.innerWidth <= 768) {
         addMobileMenuButton();
     }
 });
 
-// 页面加载完成后检查
 window.addEventListener('load', function() {
     if (window.innerWidth <= 768) {
         addMobileMenuButton();
     }
     
-    // 初始化案例标签
     initCaseTabs();
 });
 
 // 添加键盘导航支持
 document.addEventListener('keydown', function(e) {
-    // ESC键关闭移动菜单
     if (e.key === 'Escape') {
         const navLinks = document.querySelector('.nav-links');
         const menuToggle = document.querySelector('.menu-toggle');
@@ -365,11 +330,9 @@ document.addEventListener('keydown', function(e) {
         }
     }
     
-    // Tab键导航增强
     if (e.key === 'Tab') {
         const focusedElement = document.activeElement;
         
-        // 如果焦点在移动菜单内，确保菜单是打开的
         if (focusedElement.closest('.nav-links')) {
             const navLinks = document.querySelector('.nav-links');
             if (navLinks && !navLinks.classList.contains('active')) {
@@ -425,7 +388,6 @@ function addPrintStyles() {
     document.head.appendChild(printStyle);
 }
 
-// 添加打印样式
 addPrintStyles();
 
 // 添加页面性能监控
@@ -440,12 +402,9 @@ function monitorPerformance() {
                 console.log('页面性能数据:');
                 console.log('页面加载时间:', pageLoadTime + 'ms');
                 console.log('DOM准备时间:', domReadyTime + 'ms');
-                
-                // 可以在这里发送性能数据到分析服务
             }, 0);
         });
     }
 }
 
-// 初始化性能监控
 monitorPerformance();
