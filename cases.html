@@ -282,40 +282,6 @@
     <script>
         // 案例页面特定功能
         document.addEventListener('DOMContentLoaded', function() {
-            // 案例咨询表单处理
-            const caseForm = document.getElementById('caseConsultationForm');
-            if (caseForm) {
-                caseForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // 简单验证
-                    const name = document.getElementById('caseName').value.trim();
-                    const phone = document.getElementById('casePhone').value.trim();
-                    const caseType = document.getElementById('caseType').value;
-                    const description = document.getElementById('caseDescription').value.trim();
-                    
-                    if (!name || !phone || !caseType || !description) {
-                        alert('请填写所有必填字段');
-                        return;
-                    }
-                    
-                    // 显示提交成功消息
-                    const submitBtn = caseForm.querySelector('.submit-button');
-                    const originalText = submitBtn.textContent;
-                    
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<span class="loading"></span> 提交中...';
-                    
-                    // 模拟提交
-                    setTimeout(() => {
-                        alert('案件咨询提交成功！我会尽快与您联系，分析您的案件情况。');
-                        caseForm.reset();
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalText;
-                    }, 1500);
-                });
-            }
-            
             // 案例详情展开/收起功能
             const caseCards = document.querySelectorAll('.case-card');
             caseCards.forEach(card => {
@@ -360,4 +326,89 @@
             margin: 15px 0;
             border-radius: 4px;
         }
-        
+            <!-- 咨询按钮样式 -->
+    <style>
+        .fixed-consult-btn {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(26,54,93,0.3);
+            z-index: 9999;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .fixed-consult-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(26,54,93,0.4);
+        }
+        .consult-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 80px;
+            transform: translateY(-50%);
+            width: 320px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+            z-index: 9999;
+            overflow: hidden;
+        }
+        .consult-panel.show {
+            display: block;
+        }
+        .consult-panel-header {
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .consult-panel-header button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .consult-panel-body {
+            padding: 20px;
+        }
+        .consult-panel-body p {
+            margin: 0 0 15px;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 480px) {
+            .fixed-consult-btn {
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            .consult-panel {
+                top: 50%;
+                right: 60px;
+                transform: translateY(-50%);
+                left: 10px;
+                width: auto;
+            }
+        }
+    </style>
+    <script>
+        function showConsultPanel() {
+            document.getElementById('consultPanel').classList.add('show');
+        }
+        function hideConsultPanel() {
+            document.getElementById('consultPanel').classList.remove('show');
+        }
+    </script>
