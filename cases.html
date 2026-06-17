@@ -218,42 +218,23 @@
     </section>
 
     <!-- 咨询区域 -->
-    <section class="consultation" style="padding: 80px 0; background-color: #f8f9fa;">
-        <div class="container">
-            <div class="section-title">
-                <h2>需要法律帮助？</h2>
-                <p>如果您有类似的法律问题需要咨询或代理，欢迎联系我</p>
-            </div>
-            <div class="contact-form">
-                <form id="caseConsultationForm" action="https://formspree.io/f/1154214499" method="post" enctype="text/plain">
-                    <div class="form-group">
-                        <label for="caseName">姓名 *</label>
-                        <input type="text" id="caseName" name="caseName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="casePhone">联系电话 *</label>
-                        <input type="tel" id="casePhone" name="casePhone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="caseType">案件类型 *</label>
-                        <select id="caseType" name="caseType" required>
-                            <option value="">请选择案件类型</option>
-                            <option value="contract">合同纠纷</option>
-                            <option value="house">房屋买卖纠纷</option>
-                            <option value="company">公司法律事务</option>
-                            <option value="finance">金融借款纠纷</option>
-                            <option value="other">其他民商事诉讼</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="caseDescription">案件简要描述 *</label>
-                        <textarea id="caseDescription" name="caseDescription" rows="4" required placeholder="请简要描述您的案件情况，包括争议焦点、涉及金额等"></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">提交咨询</button>
-                </form>
-            </div>
+    <!-- 悬浮咨询按钮 -->
+    <div class="fixed-consult-btn" onclick="showConsultPanel()">
+        <i class="fas fa-comments"></i> 在线咨询
+    </div>
+    
+    <!-- 咨询面板 -->
+    <div class="consult-panel" id="consultPanel">
+        <div class="consult-panel-header">
+            <span>扫码咨询杨律师</span>
+            <button onclick="hideConsultPanel()">&times;</button>
         </div>
-    </section>
+        <div class="consult-panel-body" style="text-align: center;">
+            <p>长按识别二维码，添加杨律师微信</p>
+            <img src="素材/微信二维码.png" alt="杨律师微信二维码" style="width: 200px; height: 200px; margin: 15px 0; border-radius: 8px;">
+            <p style="color: #666; font-size: 0.85rem;">或直接拨打电话：<strong>15921823657</strong></p>
+        </div>
+    </div>
 
     <!-- 页脚 -->
     <footer>
